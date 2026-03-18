@@ -55,6 +55,7 @@ def login():
                                first_name, last_name, email) Values \
                                ("{username}", "{pasword}", "{first_name}", \
                                "{last_name}", "{email}")')
+                return 2
         except ValueError:
             print("Invalid Input")
             login()
@@ -72,19 +73,22 @@ def return_database_query(query: string):
 def databace_interface():
     while True:
         try:
-            inputs = int(input("Input "))
+            inputs = int(input("Call Infomation: 1: Plane Infomation , 2: \
+                               Planes Onwed "))
             if inputs == break_code:
                 break
             elif inputs == 1:
                 tmp = return_database_query(querys[1])
                 for tuple in tmp:
-                    print(f"Name: {tuple[0]}  |  Top speed: {tuple[1]}km/h  \
-|  Payload Capacity: {tuple[2]}kg  |  Cruising altitude: {tuple[3]}m  |  \
-Generation: {tuple[4]}  |  Type: {tuple[5]}")
+                    print(f"Name: {tuple[0]:>20}  |  Top speed: {tuple[1]:>4}\
+                          km/h  |  Payload Capacity: {tuple[2]:>7}kg  |  \
+                          Cruising altitude: {tuple[3]}m  |  Generation: \
+                            {tuple[4]}  |  Type: {tuple[5]}")
             elif inputs == 2:
                 tmp = return_database_query(querys[2])
                 for tuples in tmp:
-                    print(F"Country: {tuples[0]} | Planes owned: {tuples[1]}")
+                    print(F"Country: {tuples[0]:>15} | Planes owned: \
+                          {tuples[1]}")
         except (EOFError, ValueError):
             print("Invalid input must be a number")
 
