@@ -1,0 +1,30 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* The Font Family- Really important!! */
+    font-family: montserrat;
+    box-sizing: border-box;
+    background-color: rgb(102, 160, 235);
+}
+
+button {
+    background-color: skyblue;
+    border-radius: 10em;
+    border-color: skyblue;
+    box-shadow: none;
+    text-shadow: none;
+    height: 10%;
+    width: 20%;
+    font-size: xx-large;
+}    
+
+.login-grid{
+    margin-top: 7.50%;
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    flex-direction: row;
+    color: black;
+}
